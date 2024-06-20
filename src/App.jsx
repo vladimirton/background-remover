@@ -9,7 +9,8 @@ function App() {
 	const [consumedCredits, setConsumedCredits] = useState(null); // Состояние для хранения потребленных кредитов
 	const canvasRef = useRef(null); // Ссылка на элемент canvas
 
-	const apiKey = process.env.API_KEY;; // Использование переменной окружения
+	const apiKey = import.meta.env.VITE_API_KEY; // Использование переменной окружения
+	console.log('API Key:', apiKey); // Временная строка для проверки значения переменной
 
 	// Обработчик изменения изображения (выбор файла)
 	const handleImageChange = useCallback((event) => {
